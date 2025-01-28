@@ -27,7 +27,6 @@ Router.route('/register')
             });
         }
         const user = await findOneFilter({ email: email }, 1);
-        console.log(user)
         if (user) {
             return res.status(404).json({ message: 'An account with an associated email already exist, please login!' });
         }
@@ -47,6 +46,7 @@ Router.route('/register')
             const verificationLink = `${process.env.CLIENT_URL}/?token=${verificationToken}`;
             // todo send mail
             // user && await mail(email, 'Verify Your Email', `Please verify your email using this link: ${verificationLink}`);
+            // todo remove after testing
             console.log(verificationLink)
             res.status(201).json({ message: 'Registration successful. Please verify your email.' });
         } catch (error) {
