@@ -26,7 +26,14 @@ Router.route('/register')
                 missingFields
             });
         }
+        const user = await findOneFilter({ email: email }, 1);
 
+        if (user) {
+            return res.status(404).json({ message: 'An account with an associated email already exist, please login!' });
+        }
+        if (user.blocked) {
+            return res.status(401).json({ message: 'User account associated with this email is currently restricted, contact support to clarify' });
+        }
         try {
             const verificationToken = crypto.randomBytes(32).toString('hex');
             const user = await createUser({
