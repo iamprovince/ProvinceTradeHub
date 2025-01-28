@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "index": "nodemon index.js",
-    "server": "node index.js"
+    "start": "node index.js"
   },
-  "keywords": [],
+  "keywords": [ ],
   "author": "",
   "license": "ISC",
   "description": "",
