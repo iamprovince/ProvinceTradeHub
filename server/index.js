@@ -25,7 +25,7 @@ app.set('trust proxy', 1);
 
 const allowedOrigins = {
     development: 'http://localhost:5173',
-    production: 'https://provincetradehub.vercel.app/' // definitely modify when domain issue is solved
+    production: 'https://provincetradehub.vercel.app' // definitely modify when domain issue is solved
 };
 let corsOptions = {
     origin: allowedOrigins[process.env.NODE_ENV],
