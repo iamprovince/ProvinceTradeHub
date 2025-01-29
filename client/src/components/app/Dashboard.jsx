@@ -61,9 +61,7 @@ const Dashboard = () => {
             <ETHTicker />
           </div>
         </div>
-        <div className='my-2'>
-          <Heatmap />
-        </div>
+        <Heatmap />
       </div>
     </section>
   );
