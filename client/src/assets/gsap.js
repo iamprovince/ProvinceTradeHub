@@ -28,7 +28,7 @@ function fadeIn(selector, options = {}) {
             scrollTrigger: {
                 trigger: selector,
                 start: "top 80%",
-                toggleActions: options.action || "play reverse play reverse"
+                toggleActions: "restart none none none"
             },
         });
     });
@@ -53,7 +53,7 @@ const staggerFadeIn = (selector, options = {}) => {
             scrollTrigger: {
                 trigger: selector,
                 start: "top 80%",
-                toggleActions: options.action || "play reverse play reverse"
+                toggleActions: "restart none none none"
             },
         })
     })
@@ -100,7 +100,7 @@ const slideIn = (selector, options = {}) => {
             scrollTrigger: {
                 trigger: selector,
                 start: "top 80%",
-                toggleActions: options.action || "play reverse play reverse"
+                toggleActions: "restart none none none"
             },
         });
     })
@@ -123,7 +123,7 @@ const scaleUp = (selector, options = {}) => {
             scrollTrigger: {
                 trigger: selector,
                 start: "top 80%",
-                toggleActions: options.action || "play reverse play reverse"
+                toggleActions: "restart none none none"
             },
         });
     })
