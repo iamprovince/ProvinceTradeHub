@@ -7,7 +7,7 @@ import {
   ShieldCheckIcon,
 } from "@heroicons/react/24/solid";
 import { supportIcon } from "../../../assets/icons";
-import { fadeIn, staggerFadeIn } from "../../../assets/gsap";
+import { fadeIn, staggerFadeIn2 } from "../../../assets/gsap";
 
 const features = [
   {
@@ -40,12 +40,12 @@ const features = [
 ];
 
 const ServicesSection = () => {
-  staggerFadeIn(".gsapServices");
-  fadeIn(".gsap");
+  staggerFadeIn2(".gsapServices");
+  fadeIn(".gsapService");
   return (
     <section className='overflow-hidden bg-primary-default min-h-screen'>
       <div className='container mx-auto px-4 py-20'>
-        <div className='text-center mb-8 gsap'>
+        <div className='text-center mb-8 gsapService'>
           <Typography variant='h4' className='mb-4 text-text-light'>
             Explore Our Services
           </Typography>
@@ -81,7 +81,7 @@ const ServicesSection = () => {
             ))}
           </div>
           <div className='mt-8 lg:mt-0 lg:ml-8 gsapServices'>
-            <img src={PhoneIllustration} alt='Phone App' className='max-w-xs mx-auto' />
+            <img src={PhoneIllustration} alt='Phone App' className='max-w-xs lg:max-w-md mx-auto' />
           </div>
         </div>
       </div>

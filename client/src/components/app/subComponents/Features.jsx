@@ -38,9 +38,11 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className='bg-inherit py-10 min-h-screen'>
-      <TickerTape />
-      <div className='container mx-auto px-4 mt-[25dvh]'>
+    <section className='bg-inherit py-10 min-h-screen relative flex flex-col justify-center'>
+      <div className='absolute top-0 left-0 w-full'>
+        <TickerTape />
+      </div>
+      <div className='container mx-auto px-4 pt-[20dvh]'>
         <div className='text-center mb-8'>
           <h4 className='text-2xl font-bold text-text-light gsapfeatures'>Security Comes First</h4>
         </div>

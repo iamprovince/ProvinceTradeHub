@@ -10,13 +10,17 @@ const MobileTradingSection = () => {
   fadeIn(".gsapTicker");
   return (
     <section className='bg-inherit lg:px-20 px-4 text-center md:text-start'>
-      <div className='flex flex-row justify-between mt-5 gsapTicker'>
-        <EURTicker />
-        <BTCUSDTicker />
-        <ETHUSDTicker />
+      {/* Ticker Container */}
+      <div className='flex flex-col lg:flex-row justify-between mt-5 gsapTicker'>
+        <EURTicker className='block' /> {/* Always visible */}
+        <BTCUSDTicker className='hidden md:block' /> {/* Hidden on mobile */}
+        <ETHUSDTicker className='hidden md:block' /> {/* Hidden on mobile */}
       </div>
-      <div className='container my-20'>
-        <div className='flex flex-wrap items-center'>
+
+      {/* Content Section */}
+      <div className='container my-16 md:my-20'>
+        <div className='flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-20'>
+          {/* Image Section */}
           <div className='w-full md:w-1/2'>
             <img
               src={LaptopIllustration}
@@ -24,7 +28,9 @@ const MobileTradingSection = () => {
               alt='Laptop showing trading platform'
             />
           </div>
-          <div className='w-full mt-4 md:mt-0 md:pt-0 md:w-1/2'>
+
+          {/* Text Content */}
+          <div className='w-full mt-6 md:mt-0 md:w-1/2'>
             <div className='ml-0 md:ml-5 gsapAlways'>
               <h4 className='mb-4 text-lg font-semibold'>
                 Always on the go? Mobile trading is easier than ever with our trading platform!

@@ -6,7 +6,7 @@ const Hero = () => {
   const navigate = useNavigate();
   staggerFadeIn(".hero");
   return (
-    <div className='flex flex-col lg:flex-row items-center justify-between px-6 py-12 lg:px-20 min-h-[93dvh] gap-8'>
+    <div className='flex flex-col lg:flex-row items-center justify-between px-6 py-10 lg:px-20 min-h-[90dvh] gap-4'>
       {/* Text Section */}
       <div className='lg:max-w-xl hero'>
         <h1 className='text-4xl font-bold mb-4'>The Better Way to Trade & Invest</h1>

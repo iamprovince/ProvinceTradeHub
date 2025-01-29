@@ -32,7 +32,7 @@ const testimonials = [
 const Testimonials = () => {
   staggerFadeIn(".gsapTestimony");
   return (
-    <section className='mt-5 bg-inherit overflow-hidden min-h-[50dvh]'>
+    <section className='my-5 bg-inherit overflow-hidden min-h-[75dvh] md:min-h-[50dvh]'>
       <div className='container mt-24 mx-auto'>
         <div className='text-center'>
           <div className='mb-8 gsapTestimony'>

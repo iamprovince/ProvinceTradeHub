@@ -70,7 +70,7 @@ const MarketData = () => {
   }, []);
   fadeIn(".gsapMarkets");
   return (
-    <div className='tradingview-widget-container container mx-auto gsapMarkets min-h-[50dvh]'>
+    <div className='tradingview-widget-container container mx-auto gsapMarkets min-h-[100dvh] py-4'>
       <div className='tradingview-widget-container__widget' ref={containerRef}></div>
       <div className='tradingview-widget-copyright text-center mt-2 invisible'>
         <a href='https://www.tradingview.com/' rel='noopener nofollow' target='_blank'>
