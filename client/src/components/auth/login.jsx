@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { LoginGraphic, Logo } from "../../assets/utilities";
 import FormError from "../app/subComponents/FormError";
-import { isValidPassword } from "./authHelpers";
+// import { isValidPassword } from "./authHelpers";
 import { useNotification } from "../layout/NotificationHelper";
 import FetchWithAuth from "./api";
 import useAuth from "./useAuth";
@@ -104,7 +104,7 @@ const Login = () => {
                     value: 8,
                     message: "Password must be at least 6 characters long.",
                   },
-                  validate: (value) => isValidPassword(value),
+                  // validate: (value) => isValidPassword(value),
                   maxLength: { value: 40, message: "Password must be at most 40 characters long." },
                 })}
               />

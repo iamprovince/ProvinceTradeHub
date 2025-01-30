@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Logo } from "../../assets/utilities";
 import FormError from "../app/subComponents/FormError";
-import { isValidPassword } from "./authHelpers";
+// import { isValidPassword } from "./authHelpers";
 import { useNotification } from "../layout/NotificationHelper";
 import FetchWithAuth from "./api";
 import { Link, useNavigate } from "react-router-dom";
@@ -175,7 +175,7 @@ const Registration = () => {
                     value: 8,
                     message: "Password must be at least 8 characters long.",
                   },
-                  validate: (value) => isValidPassword(value),
+                  // validate: (value) => isValidPassword(value),
                   maxLength: { value: 40, message: "Password must be at most 40 characters long." },
                 })}
               />

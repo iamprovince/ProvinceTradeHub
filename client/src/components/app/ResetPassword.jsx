@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import FormError from "./subComponents/FormError"; // Replace with your actual path
-import { isValidPassword } from "../auth/authHelpers";
+// import { isValidPassword } from "../auth/authHelpers";
 import { getDateAfterDays } from "../../assets/helpers";
 import useAuth from "../auth/useAuth";
 import FetchWithAuth from "../auth/api";
@@ -119,7 +119,7 @@ const PasswordReset = () => {
             {...register("newPassword", {
               required: "New password is required.",
               validate: {
-                isValidPassword: (value) => isValidPassword(value),
+                // isValidPassword: (value) => isValidPassword(value),
                 notSameAsCurrent: (value) =>
                   value !== watch("currentPassword") ||
                   "New password cannot be the same as the current password.",
