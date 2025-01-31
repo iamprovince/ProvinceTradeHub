@@ -25,6 +25,7 @@ import FooterLanding from "./layout/FooterLanding";
 import Navbar from "./layout/Navbar";
 import Contact from "./app/Contact";
 import About from "./app/About";
+import Chatbot from "./layout/Chatbot";
 export default function Router() {
   const LandingLayout = () => {
     return (
@@ -33,6 +34,7 @@ export default function Router() {
         <Outlet />
         <NotificationDisplay />
         <FooterLanding />
+        <Chatbot />
       </>
     );
   };
@@ -52,6 +54,7 @@ export default function Router() {
 
         {/* Notifications */}
         <NotificationDisplay />
+        <Chatbot />
       </div>
     );
   };
@@ -62,6 +65,7 @@ export default function Router() {
         <Outlet />
         <NotificationDisplay />
         <FooterAuth />
+        <Chatbot />
       </>
     );
   };
