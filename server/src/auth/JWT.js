@@ -45,7 +45,7 @@ Router.route('/register')
 
             const verificationLink = `${process.env.CLIENT_URL}/?token=${verificationToken}`;
             // todo send mail
-            // user && await mail(email, 'Verify Your Email', `Please verify your email using this link: ${verificationLink}`);
+            user && await mail(email, 'Verify Your Email', `Please verify your email using this link: ${verificationLink}`);
             // todo remove after testing
             console.log(verificationLink)
             res.status(201).json({ message: 'Registration successful. Please verify your email.' });
@@ -238,15 +238,15 @@ Router.route('/check-user/:email')
             newCodeRequest.scheduleDeletion()
             console.log(newCodeRequest.code);
             // Uncomment when email is configured
-            // const codeSent = await mail(
-            //     email,
-            //     'Password Reset',
-            //     `${user?.fullName}, use ${newCodeRequest?.code} to reset your password. It expires in 5 mins. Your next allowed change will be in ${daysForReset} days.`
-            // );
+            const codeSent = await mail(
+                email,
+                'Password Reset',
+                `${user?.fullName}, use ${newCodeRequest?.code} to reset your password. It expires in 5 mins. Your next allowed change will be in ${daysForReset} days.`
+            );
             res.status(200).json({
                 user: userToSend,
                 message: 'Code sent to email',
-                codeSent: true // Replace with `!!codeSent` when mail is configured
+                codeSent: !!codeSent // Replace with `!!codeSent` when mail is configured
             });
         } catch (error) {
             console.error('Error finding associated user:', error);
