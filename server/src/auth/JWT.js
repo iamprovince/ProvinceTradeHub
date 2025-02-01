@@ -44,10 +44,7 @@ Router.route('/register')
             });
 
             const verificationLink = `${process.env.CLIENT_URL}/?token=${verificationToken}`;
-            // todo send mail
-            user && await mail(email, 'Verify Your Email', `Please verify your email using this link: ${verificationLink}`);
-            // todo remove after testing
-            console.log(verificationLink)
+            user && await mail(email, 'Verify Your Email', `Please verify your email using this link within the next 24 hours: ${verificationLink}`);
             res.status(201).json({ message: 'Registration successful. Please verify your email.' });
         } catch (error) {
             console.log(error);
@@ -165,7 +162,7 @@ Router.route('/verify-email')
             }
 
             await updateUserFields(user._id, { isVerified: true, verificationToken: null });
-            res.status(200).json({ message: 'Email verified successfully' });
+            res.status(200).json({ message: 'Email verified successfully, proceed to login' });
         } catch (error) {
             console.error(error);
             res.status(500).json({ message: 'An error occurred during email verification' });
@@ -236,12 +233,11 @@ Router.route('/check-user/:email')
             }
             let newCodeRequest = await createCodeRequest(email, codeRequests)
             newCodeRequest.scheduleDeletion()
-            console.log(newCodeRequest.code);
             // Uncomment when email is configured
             const codeSent = await mail(
                 email,
                 'Password Reset',
-                `${user?.fullName}, use ${newCodeRequest?.code} to reset your password. It expires in 5 mins. Your next allowed change will be in ${daysForReset} days.`
+                `${user?.fullName}, use ${newCodeRequest?.code} to reset your password. It expires in 24 hours. Your next allowed change will be in ${daysForReset} days.`
             );
             res.status(200).json({
                 user: userToSend,

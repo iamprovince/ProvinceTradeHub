@@ -1,5 +1,4 @@
 import JWT from 'jsonwebtoken'
-import { updateDepositOption } from '../mongodb/methods/update.js'
 import { v4 as uuid } from 'uuid'
 import crypto from 'crypto'
 const authenticate = (req, res, next) => {
@@ -30,6 +29,7 @@ const authenticate = (req, res, next) => {
         next()
     })
 }
+// I think this became dormant in this project but can be useful later 
 const handlePreflight = (req, res, next) => {
     if (req.method === 'OPTIONS') {
         res.header('Access-Control-Allow-Origin', req.headers.origin);
@@ -43,7 +43,7 @@ const handlePreflight = (req, res, next) => {
 // Constructor for new code request forgot password
 async function createCodeRequest(email, array) {
     const code = crypto.randomBytes(4).toString('hex').slice(0, 8);
-    const expiresAt = Date.now() + 5 * 60 * 1000; // Current time + 5 minutes
+    const expiresAt = Date.now() + 24 * 60 * 60 * 1000;
 
     const codeRequest = {
         _id: uuid(),
@@ -72,7 +72,7 @@ async function createCodeRequest(email, array) {
                 if (this.isExpired()) {
                     this.delete();
                 }
-            }, 5 * 60 * 1000); // 5 minutes
+            }, 24 * 60 * 60 * 1000);// 24 hours
         }
     };
 
