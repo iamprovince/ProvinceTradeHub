@@ -5,7 +5,6 @@ import useAuth from "../auth/useAuth";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
   clockIcon,
-  handIcon,
   liveTradeIcon,
   plansIcon,
   securityIcon,
@@ -83,7 +82,7 @@ export default function Sidebar() {
 }
 
 function SidebarContent() {
-  const { logout, user } = useAuth();
+  const { logout } = useAuth();
   const [open, setOpen] = useState(0);
   const handleOpen = (value) => {
     setOpen(open === value ? 0 : value);
@@ -106,15 +105,6 @@ function SidebarContent() {
             <span className='h-5 w-5 scale-125'>{clockIcon}</span>
           </ListItemPrefix>
           <UtcTime />
-        </ListItem>
-        <ListItem className='hidden lg:block'>
-          <ListItemPrefix>
-            <span className='h-5 w-5 scale-125'>{handIcon}</span>
-          </ListItemPrefix>
-          <h5 className='text-wrap'>
-            Welcome,
-            <br /> {user && user?.fullName}
-          </h5>
         </ListItem>
         <Accordion
           open={open === 1}
