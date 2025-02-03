@@ -172,7 +172,7 @@ const DepositHistoryTable = () => {
               ))}
               {paginatedTransactions.length === 0 && (
                 <tr>
-                  <td colSpan='5' className='p-4 text-center'>
+                  <td colSpan='6' className='p-4 text-center'>
                     No transactions found. Keep an eye out as your financial portfolio grows!
                   </td>
                 </tr>
