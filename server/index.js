@@ -24,7 +24,8 @@ mongoose.connect(process.env.MONGO_ATLAS_URI, {
 // CORS configuration
 const allowedOrigins = {
     development: 'http://localhost:5173',
-    production: 'https://provincetradehub.vercel.app'
+    production: 'https://provincetrade.online'
+    // production: 'https://provincetradehub.vercel.app'
 };
 
 const corsOptions = {
