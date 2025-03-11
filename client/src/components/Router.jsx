@@ -25,7 +25,8 @@ import FooterLanding from "./layout/FooterLanding";
 import Navbar from "./layout/Navbar";
 import Contact from "./app/Contact";
 import About from "./app/About";
-import Chatbot from "./layout/Chatbot";
+// import Chatbot from "./layout/Chatbot";
+import Smartsupp from "./layout/Smartsupp";
 export default function Router() {
   const LandingLayout = () => {
     return (
@@ -34,7 +35,8 @@ export default function Router() {
         <Outlet />
         <NotificationDisplay />
         <FooterLanding />
-        <Chatbot />
+        {/* <Chatbot /> */}
+        <Smartsupp />
       </>
     );
   };
@@ -54,7 +56,8 @@ export default function Router() {
 
         {/* Notifications */}
         <NotificationDisplay />
-        <Chatbot />
+        {/* <Chatbot /> */}
+        <Smartsupp />
       </div>
     );
   };
@@ -65,7 +68,8 @@ export default function Router() {
         <Outlet />
         <NotificationDisplay />
         <FooterAuth />
-        <Chatbot />
+        <Smartsupp />
+        {/* <Chatbot /> */}
       </>
     );
   };
