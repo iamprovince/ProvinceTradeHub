@@ -45,7 +45,7 @@ Router.route('/register')
 
             // const verificationLink = `${process.env.CLIENT_URL}/?token=${verificationToken}`;
             // user && await mail(email, 'Verify Your Email', `Please verify your email using this link within the next 24 hours: ${verificationLink}`);
-            res.status(201).json({ message: 'Registration successful. Please verify your email' });
+            res.status(201).json({ message: 'Registration successful' });
             // res.status(201).json({ message: 'Registration successful. Please verify your email' });
         } catch (error) {
             console.log(error);
